@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { Tab } from '@headlessui/react'
+import { Tab } from '@headlessui/react';
+import { useState } from 'react';
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Example() {
-  let [categories] = useState({
+  const [categories] = useState({
     Weekly: [
       {
         id: 1,
@@ -39,7 +39,7 @@ export default function Example() {
         shareCount: 12,
       },
     ],
-    Quaterly : [
+    Quaterly: [
       {
         id: 1,
         title: 'Ask Me Anything: 10 answers to your questions about coffee',
@@ -56,22 +56,22 @@ export default function Example() {
       },
     ],
     Yearly: [
-        {
-          id: 1,
-          title: 'Ask Me Anything: 10 answers to your questions about coffee',
-          date: '2d ago',
-          commentCount: 9,
-          shareCount: 5,
-        },
-        {
-          id: 2,
-          title: "The worst advice we've ever heard about coffee",
-          date: '4d ago',
-          commentCount: 1,
-          shareCount: 2,
-        },
-      ],
-  })
+      {
+        id: 1,
+        title: 'Ask Me Anything: 10 answers to your questions about coffee',
+        date: '2d ago',
+        commentCount: 9,
+        shareCount: 5,
+      },
+      {
+        id: 2,
+        title: "The worst advice we've ever heard about coffee",
+        date: '4d ago',
+        commentCount: 1,
+        shareCount: 2,
+      },
+    ],
+  });
 
   return (
     <div className="w-full max-w-md px-2 mx-4 sm:px-0">
@@ -86,7 +86,7 @@ export default function Example() {
                   'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                   selected
                     ? 'bg-white shadow'
-                    : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                    : 'text-blue-100 hover:bg-white/[0.12] hover:text-white',
                 )
               }
             >
@@ -100,18 +100,13 @@ export default function Example() {
               key={idx}
               className={classNames(
                 'rounded-xl bg-white p-3',
-                'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
+                'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
               )}
             >
               <ul>
                 {posts.map((post) => (
-                  <li
-                    key={post.id}
-                    className="relative rounded-md p-3 hover:bg-gray-100"
-                  >
-                    <h3 className="text-sm font-medium leading-5">
-                      {post.title}
-                    </h3>
+                  <li key={post.id} className="relative rounded-md p-3 hover:bg-gray-100">
+                    <h3 className="text-sm font-medium leading-5">{post.title}</h3>
 
                     <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
                       <li>{post.date}</li>
@@ -122,10 +117,10 @@ export default function Example() {
                     </ul>
 
                     <a
-                      href="#"
+                      href="google.com"
                       className={classNames(
                         'absolute inset-0 rounded-md',
-                        'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
+                        'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2',
                       )}
                     />
                   </li>
@@ -136,5 +131,5 @@ export default function Example() {
         </Tab.Panels>
       </Tab.Group>
     </div>
-  )
+  );
 }

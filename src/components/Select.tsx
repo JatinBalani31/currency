@@ -1,15 +1,15 @@
-import React, { Fragment, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { Listbox, Transition } from '@headlessui/react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
+import React, { Fragment, useState } from 'react';
 
 interface SelectProps {
-  state?: string
-  setState?: React.Dispatch<React.SetStateAction<string>>
-  options?: string[]
+  state?: string;
+  setState?: React.Dispatch<React.SetStateAction<string>>;
+  options?: string[];
 }
 
 export default function Select(props: SelectProps) {
-  const {state, setState, options} = props
+  const { state, setState, options } = props;
   return (
     <div className="w-72 my-1">
       <Listbox value={state} onChange={setState}>
@@ -17,10 +17,7 @@ export default function Select(props: SelectProps) {
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">{state}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-              <ChevronUpDownIcon
-                className="h-5 w-5 text-gray-400"
-                aria-hidden="true"
-              />
+              <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
             </span>
           </Listbox.Button>
           <Transition
@@ -63,5 +60,5 @@ export default function Select(props: SelectProps) {
         </div>
       </Listbox>
     </div>
-  )
+  );
 }

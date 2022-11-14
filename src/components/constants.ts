@@ -1,4 +1,1 @@
-export const countries = [
-    "India",
-    "USA"
-]
+export const countries = ['India', 'USA'];

@@ -8,18 +8,21 @@ import Reader from './components/Reader';
 function App() {
   const [country, setCountry] = React.useState('INR');
   const [options, setOptions] = React.useState("Monthly")
-  const [data, setData] = React.useState({
+  const [data, setData] = React.useState<{
+    data: any[],
+    info: string
+  }>({
     data: [],
     info: ""
   })
-  const [chart, setChart] = React.useState([]) 
+  const [chart, setChart] = React.useState<any[]>([]) 
   React.useEffect(() => {
     if(data.data.length) {
       switch(options) {
-      case "Daily" :setChart(() => {
+      case "Monthly" :setChart((_chart) => {
         const tmp: any[] = []
         data?.data.forEach((obj, idx) => {
-        tmp.push([obj.ate, obj[country]])
+        tmp.push([obj?.ate, obj[country]])
       })
       return tmp;
     })
